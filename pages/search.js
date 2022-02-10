@@ -14,9 +14,9 @@ import Property from "../components/Property";
 // Api call
 import { fetchApi, baseUrl } from "../utils/fetchApi";
 
-const search = ({ properties }) => {
+const Search = ({ properties }) => {
     const [searchFilters, setSearchFilters] = useState(false);
-    const Router = useRouter();
+    const router = useRouter();
     
     return (
         <Box>
@@ -37,7 +37,7 @@ const search = ({ properties }) => {
             </Flex>
             {searchFilters && <SearchFilters/>}
             <Text fontSize='2xl' p='4' fontWeight='bold'>
-                Properties {Router.query.purpose}
+                Properties {router.query.purpose}
             </Text>
             <Flex flexWrap='wrap'>
                 {properties.map((property) => <Property property={property} key={property.id} />)}
@@ -52,7 +52,7 @@ const search = ({ properties }) => {
     )
 }
 
-export default search;
+export default Search;
 
 export async function getServerSideProps({ query }) {
     const purpose = query.purpose || 'for-rent';
