@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Menu, MenuButton, MenuList, MenuItem, IconButton, Flex, Box, Spacer, Icon } from "@chakra-ui/react";
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc';
 import { BsSearch } from 'react-icons/bs';
-import { FiKey } from 'react-icons/fi';
+import { FiKey, FiSun } from 'react-icons/fi';
 
 const Navbar = () => (
     <Flex p='2' borderBottom='1px' borderColor='gray.100'>
@@ -26,6 +26,23 @@ const Navbar = () => (
                     <Link href='/search?purpose=for-rent' passHref>
                         <MenuItem icon={<FiKey />} >Rent Property</MenuItem>
                     </Link>
+                        {/* <MenuItem 
+                            icon={<FiSun />} 
+                            onClick={() => {
+                                var text = document.getElementById('mode-text');
+                                var element = document.body;
+                                if(text.innerText == "Dark Mode"){
+                                    text.innerText = "Light Mode";
+                                    element.style.backgroundColor = "black";
+                                }
+                                else if(text.innerText == "Light Mode"){
+                                    text.innerText = "Dark Mode";
+                                    element.style.backgroundColor = "white";
+                                }
+                            }} 
+                        >
+                        <span id="mode-text">Dark Mode</span>
+                        </MenuItem> */}
                 </MenuList>
             </Menu>
         </Box>
