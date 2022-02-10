@@ -16,7 +16,7 @@ import { fetchApi, baseUrl } from "../utils/fetchApi";
 
 const search = ({ properties }) => {
     const [searchFilters, setSearchFilters] = useState(false);
-    const router = useRouter();
+    const Router = useRouter();
     
     return (
         <Box>
@@ -37,7 +37,7 @@ const search = ({ properties }) => {
             </Flex>
             {searchFilters && <SearchFilters/>}
             <Text fontSize='2xl' p='4' fontWeight='bold'>
-                Properties {router.query.purpose}
+                Properties {Router.query.purpose}
             </Text>
             <Flex flexWrap='wrap'>
                 {properties.map((property) => <Property property={property} key={property.id} />)}
